@@ -1,0 +1,104 @@
+---
+const stats = [
+    {
+        number: "5,000+",
+        label: "Repuestos en Stock",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-slate-400 group-hover:text-yellow-500 transition-colors"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    },
+    {
+        number: "2,000+",
+        label: "Clientes Satisfechos",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-slate-400 group-hover:text-yellow-500 transition-colors"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    },
+    {
+        number: "9",
+        label: "Departamentos con Envío",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-slate-400 group-hover:text-yellow-500 transition-colors"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    },
+    {
+        number: "4",
+        label: "Marcas Premium",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-slate-400 group-hover:text-yellow-500 transition-colors"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+    },
+];
+---
+
+<section id="stats-section" class="py-16 bg-slate-900 relative overflow-hidden">
+    <!-- Background pattern -->
+    <div
+        class="absolute inset-0 opacity-5"
+        style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div
+            class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-0 lg:divide-x lg:divide-white/10"
+        >
+            {
+                stats.map((stat) => {
+                    const cleanNum = parseInt(
+                        stat.number.replace(/,/g, ""),
+                        10,
+                    );
+                    const hasPlus = stat.number.includes("+");
+
+                    return (
+                        <div class="text-center group lg:px-6">
+                            <div class="mb-4" set:html={stat.icon} />
+                            <div class="text-3xl lg:text-4xl font-black text-yellow-500 mb-1 tracking-tight flex items-center justify-center">
+                                <span class="count-up" data-target={cleanNum}>
+                                    0
+                                </span>
+                                {hasPlus && <span>+</span>}
+                            </div>
+                            <div class="text-sm text-slate-300 font-medium uppercase tracking-wider">
+                                {stat.label}
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll(".count-up");
+                    counters.forEach((counter) => {
+                        const target = +(
+                            counter.getAttribute("data-target") || 0
+                        );
+                        const duration = 2000;
+                        const increment = target / (duration / 16); // 60fps
+
+                        let current = 0;
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.textContent =
+                                    Math.ceil(current).toLocaleString("en-US");
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent =
+                                    target.toLocaleString("en-US");
+                            }
+                        };
+                        updateCounter();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.3 },
+    );
+
+    const statsSection = document.getElementById("stats-section");
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+</script>

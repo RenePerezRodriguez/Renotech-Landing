@@ -1,0 +1,246 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+    <Navbar />
+    <main class="pt-32 pb-24 bg-gray-50 min-h-screen relative overflow-hidden">
+        <!-- Subtle background pattern consistent with site -->
+        <div
+            class="absolute inset-0 opacity-[0.01] pointer-events-none"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+        >
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1
+                class="text-4xl lg:text-5xl font-black text-slate-900 mb-8 tracking-tight drop-shadow-sm text-center md:text-left"
+            >
+                Aviso de <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600"
+                    >Privacidad</span
+                >
+            </h1>
+
+            <div
+                class="bg-white p-8 sm:p-12 rounded-3xl shadow-sm border border-slate-200"
+            >
+                <p
+                    class="font-medium text-lg lg:text-xl text-slate-700 leading-relaxed mb-10 text-justify sm:text-left"
+                >
+                    En <strong class="text-slate-900">Renotech</strong>,
+                    valoramos y respetamos tu información. Esta política detalla
+                    cómo recopilamos, usamos y protegemos los datos personales
+                    que nos proporcionas cuando interactúas con nuestro sitio
+                    web y servicios comerciales en Bolivia.
+                </p>
+
+                <div class="space-y-12">
+                    <section>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-4"
+                        >
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-slate-900 text-yellow-500 font-black flex items-center justify-center text-xl shadow-lg border border-slate-800 shrink-0"
+                                >1</span
+                            >
+                            Información que recopilamos
+                        </h2>
+                        <p
+                            class="text-slate-600 text-lg leading-relaxed md:pl-16 text-justify sm:text-left"
+                        >
+                            Al utilizar nuestros formularios de alta intención,
+                            landing pages o al comunicarte mediante WhatsApp
+                            corporativo, <strong class="text-slate-800"
+                                >podemos recopilar información básica</strong
+                            > requerida para el servicio. Esta incluye típicamente:
+                            tu nombre completo, número de teléfono (WhatsApp), ciudad
+                            de residencia o envío, y los detalles técnicos de los
+                            repuestos que cotizas (modelos de Renault, Mazda, Ford,
+                            Peugeot).
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-4"
+                        >
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-slate-900 text-yellow-500 font-black flex items-center justify-center text-xl shadow-lg border border-slate-800 shrink-0"
+                                >2</span
+                            >
+                            Uso de la información
+                        </h2>
+                        <div class="md:pl-16">
+                            <p
+                                class="text-slate-600 text-lg leading-relaxed mb-6 text-justify sm:text-left"
+                            >
+                                La información recopilada por nuestro equipo se
+                                utiliza exclusivamente para fines operativos y
+                                comerciales directos:
+                            </p>
+                            <ul class="list-none space-y-4">
+                                <li
+                                    class="flex items-start gap-4 text-slate-700 text-lg leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-yellow-500 mt-1 shrink-0"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path></svg
+                                    >
+                                    <span class="font-medium"
+                                        >Atender tus solictudes y cotizaciones
+                                        de manera expedita y personalizada.</span
+                                    >
+                                </li>
+                                <li
+                                    class="flex items-start gap-4 text-slate-700 text-lg leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-yellow-500 mt-1 shrink-0"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path></svg
+                                    >
+                                    <span class="font-medium"
+                                        >Coordinar la logística y notificar
+                                        sobre el envío de repuestos a diferentes
+                                        departamentos de Bolivia.</span
+                                    >
+                                </li>
+                                <li
+                                    class="flex items-start gap-4 text-slate-700 text-lg leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100"
+                                >
+                                    <svg
+                                        class="w-6 h-6 text-yellow-500 mt-1 shrink-0"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="3"
+                                            d="M5 13l4 4L19 7"></path></svg
+                                    >
+                                    <span class="font-medium"
+                                        >Mejorar tu experiencia de usuario
+                                        mediante campañas de remarketing o
+                                        promociones exclusivas.</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-4"
+                        >
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-slate-900 text-yellow-500 font-black flex items-center justify-center text-xl shadow-lg border border-slate-800 shrink-0"
+                                >3</span
+                            >
+                            Cookies y Rastreo Estadístico
+                        </h2>
+                        <p
+                            class="text-slate-600 text-lg leading-relaxed md:pl-16 text-justify sm:text-left"
+                        >
+                            Nuestro sitio web utiliza tecnologías de rastreo
+                            estándar de la industria (como <strong
+                                class="text-slate-800"
+                                >Píxeles de Meta / Facebook</strong
+                            > y etiquetas analíticas de Google) para fines de optimización
+                            publicitaria. Estas herramientas recopilan datos de navegación
+                            anónimos para ayudarnos a entender qué páginas visitas
+                            y cómo interactúas con la plataforma, garantizando que
+                            futuras campañas publicitarias sean lo más relevantes
+                            posible para tu perfil.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-4"
+                        >
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-slate-900 text-yellow-500 font-black flex items-center justify-center text-xl shadow-lg border border-slate-800 shrink-0"
+                                >4</span
+                            >
+                            Comunicaciones vía WhatsApp
+                        </h2>
+                        <p
+                            class="text-slate-600 text-lg leading-relaxed md:pl-16 text-justify sm:text-left"
+                        >
+                            Nuestra principal vía de cotización es WhatsApp. Al
+                            hacernos clic y establecer comunicación por dicho
+                            medio, tus mensajes y metadatos operativos estarán
+                            sujetos inherentemente a las <a
+                                href="https://www.whatsapp.com/legal/privacy-policy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-yellow-600 hover:text-yellow-500 font-bold transition-colors underline decoration-yellow-300 underline-offset-4"
+                                >Políticas de Privacidad Globales de WhatsApp
+                                (Meta Inc.)</a
+                            >. Te recomendamos revisarlas.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2
+                            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-4"
+                        >
+                            <span
+                                class="w-12 h-12 rounded-2xl bg-slate-900 text-yellow-500 font-black flex items-center justify-center text-xl shadow-lg border border-slate-800 shrink-0"
+                                >5</span
+                            >
+                            Protección y Divulgación
+                        </h2>
+                        <p
+                            class="text-slate-600 text-lg leading-relaxed md:pl-16 text-justify sm:text-left"
+                        >
+                            Renotech se compromete estrictamente a <strong
+                                class="text-slate-800"
+                                >no vender, alquilar ni comercializar</strong
+                            > tu información personal o números de teléfono a bases
+                            de datos de terceros. Únicamente compartimos tus datos
+                            identificativos (nombre, carnet, celular) con las empresas
+                            de mensajería (Flotas, Transportadoras, Couriers) cuando
+                            es estrictamente necesario para despachar tu producto.
+                        </p>
+                    </section>
+                </div>
+
+                <div
+                    class="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4"
+                >
+                    <p
+                        class="text-xs font-bold uppercase tracking-widest text-slate-400 text-center sm:text-left"
+                    >
+                        Última actualización: Febrero de 2026<br />
+                        Renotech Bolivia. Todos los derechos reservados.
+                    </p>
+                    <a
+                        href="/"
+                        class="text-sm font-bold text-slate-600 hover:text-slate-900 hover:underline underline-offset-4 transition-all uppercase tracking-widest"
+                    >
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>

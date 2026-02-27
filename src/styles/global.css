@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-renotech-accent: #EAB308;
+  --color-renotech-dark: #020617;
+  --color-renotech-surface: #0F172A;
+  --color-renotech-border: #1E293B;
+
+  --color-yellow-500: #EAB308;
+  --color-slate-950: #020617;
+  --color-slate-900: #0F172A;
+  --color-slate-800: #1E293B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-slate-900 min-h-screen font-sans selection:bg-yellow-500 selection:text-black;
+  }
+}
+
+@layer utilities {
+  .renotech-button {
+    @apply bg-yellow-500 hover:bg-yellow-400 text-black rounded-2xl font-black uppercase text-xs tracking-widest transition-all active:scale-95 shadow-xl px-6 py-3 flex items-center justify-center gap-2;
+  }
+
+  .renotech-card {
+    @apply bg-white rounded-[2.5rem] border border-gray-200 shadow-xl overflow-hidden;
+  }
+
+  .renotech-title {
+    @apply text-3xl md:text-5xl font-black uppercase tracking-tight text-slate-900 leading-tight;
+  }
+
+  .renotech-subtitle {
+    @apply text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500;
+  }
+}
