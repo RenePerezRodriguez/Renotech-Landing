@@ -1,0 +1,21 @@
+# Firebase App Hosting configuration for Renotech Landing Page
+# https://firebase.google.com/docs/app-hosting/configure
+
+# Cloud Run container settings (optimized for a lightweight landing page)
+runConfig:
+  minInstances: 0
+  maxInstances: 1
+  concurrency: 100
+  cpu: 1
+  memoryMiB: 512
+
+# Explicit run command — tells Cloud Run exactly how to boot the Astro SSR server
+scripts:
+  runCommand: node dist/server/entry.mjs
+
+# Environment variables required for the container
+env:
+  - variable: HOST
+    value: "0.0.0.0"
+    availability:
+      - RUNTIME
